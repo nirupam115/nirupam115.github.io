@@ -6,7 +6,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name = "author" content = "Nirupam Gupta" /> 
-		<meta name = "keywords" content = "nirupam gupta, umd, university of maryland, distributed privacy, privacy consensus, confidentiality consensus, security bilateral teleoperation, privacy distributed control, information-theoretic privacy, distributed average consensus, security and privacy multi-agent system, one-time pad encryption real values, perfect privacy networked control system, distributed asynchronus computing, model-based encryption, lightweight encryption, keyless encryption, byzantine, regression, fault-tolerance, optimization, georgetown university, Indian Institute of Technology" /> 
+		<meta name = "keywords" content = "nirupam gupta" /> 
 		<meta name = "introduction" content = "Personal webpage, Nirupam Gupta" /> 
 
 		<title>निरुपम गुप्ता (Nirupam Gupta) </title>
@@ -246,249 +246,26 @@
 				sponsored by <a href = "https://disc.georgetown.domains" target = "_blank">Prof. Nitin H. Vaidya</a>. 
 				I obtained my PhD from the University of Maryland, College Park. 
 				My PhD dissertation was on Privacy in Distributed Multi-Agent Collaboration: Consensus and Optimization, 
-				supervised by <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Prof. Nikhil Chopra</a>. </p>
+				supervised by <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Prof. Nikhil Chopra</a>. 
+			</p>
 
-            		<p> <b>Research Work:</b> Broadly, I am interested in design and analysis of algorithms for distributed optimization and machine learning. 
-				My recent research work focuses on (Byzantine) fault-tolerance (or robustness) in distributed (including decentralized) machine learning. Some of the challenges 
-				in this topic that I am currently pursuing include data heterogeneity, differential privacy constraints, and asynchronicity. </br>
+            <p> <b>Research Work:</b> Broadly, I am interested in design and analysis of algorithms for distributed optimization and machine learning. 
+				My recent research work focuses on Byzantine fault-tolerance (or robustness to adversarial nodes) in distributed (including decentralized) machine learning. 
+				Some of the challenges in this topic that I am currently pursuing are data heterogeneity, differential privacy constraints, and asynchronicity. </br>
 
-				In the past, I have worked on pre-conditioned gradient-descent methods, applicable to the distributed optimization framework.
-				</p>	
+				In the past, I have also worked on pre-conditioning algorithms for gradient-descent, applicable to the distributed optimization framework. 
+				During my PhD, my work primarily focused on the issues of robustness (to adversarial actors) and privacy in distributed optimization and average consensus. 
+				For an updated list of my publications, please visit my <a href = "https://dblp.org/pid/192/3250.html" target = "_blank">DBLP profile</a>.
+			</p>	
 
-            		<p> <b>Teaching Experience</b>: At Georgetown University, I taught a seminar course on <i>Algorithms for Distributed Machine Learning</i>. 
-				The course introduced the contemporary algorithms and challenges for solving the problem of distributed machine learning. 
-				It was offered to Computer Science PhD students in the spring semester of 2020. 
-				Details on the course can be found <a href= "https://nirupam.georgetown.domains/my_files/2020/course_outline(dist_learn).pdf" target = "_blank">here</a>.</p>
+            <p> <b>Teaching Experience</b>: I have given guest lectures on the topic of byzantine robustness in distributed machine learning in the distributed algorithms
+				course, taught by Prof. Rachid Guerraoui at EPFL. During my postdoc at Georgetown University, I taught a seminar course on algorithms for distributed machine learning</i>.
+			</p>
 		</div>
 
 
 	</div>
-
-	<div class = "middle">	
-		<hr>	
-			<h3>Recent publications -</h3>
-
-			<ul>
-				<li>
-			 		<b>Byzantine Fault-Tolerance in (High-Dimensional) Peer-to-Peer Distributed Gradient-Descent</b> (<a href = "https://arxiv.org/abs/2101.12316" target = "_blank">arXiv</a>, Feb'21), 
-			 		<i>with</i> <a href = "https://sites.google.com/site/thinhdoan210" target = "_blank">Nitin Vaidya</a>. </br>
-			 		In this paper, we propose the <b>first-ever</b> mechanism to confer provable (Byzantine) fault-tolerance to the peer-to-peer (P2P) distributed gradient-descent algorithm. In contrast to prior work, our algorithm is applicabile to higher-dimensions, and does not rely on <i>Byzantine broadcast</i>. Unlike the more commonly assumed server-based system architecture, we consider the P2P architecture wherein the nodes may only interact amongst themselves, do not have access to a <i>trustworthy</i> server. Ensuring fault-tolerance in a P2P setting is more challenging than in a server-based setting. Common applications of our algorithm include P2P distributed - machine learning, hypothesis testing, and state estimation.
-			 	</li>
-
-			 	</p>
-
-				<li>
-			 		<b>Approximate Byzantine Fault-Tolerance in Distributed Optimization</b> (<a href = "https://arxiv.org/abs/2101.09337" target = "_blank">arXiv</a>, Jan'21), 
-			 		<i>with</i> <a href = "https://disc.georgetown.domains" target = "_blank">Shuo Liu</a>, and <a href = "https://sites.google.com/site/thinhdoan210" target = "_blank">Nitin Vaidya</a>. </br>
-			 		An important extension to <a href = "https://nirupam.georgetown.domains/my_files/2020/podc2020_final.pdf" target = "_blank">our prior work on <i>exact</i> Byzantine fault-tolerance</a>, which appeared in the proceedings of PODC'20. In this particular paper, as the name suggests, we study the problem of <i>approximate</i> Byzantine fault-tolerance - a generalization of exact fault-tolerance. The results presented here have a much wider applicability, as opposed to the results on exact fault-tolerance. We present generic fault-tolerance properties that can be applied directly to contemporary real-world distributed optimization problems; such as federated learning, multi-sensor networks, and network resource allocation. (Utility of our results to the distributed homogeneous machine learning case is demonstrated <a href = "https://arxiv.org/abs/2008.04699" target = "_blank">here</a>.)
-			 	</li>
-
-			 	</p>
-
-				<li>
-			 		<b>Byzantine Fault-Tolerance in Decentralized Optimization under 2f-Redundancy</b> (<a href = "https://arxiv.org/abs/2009.14763" target = "_blank">arXiv</a>, Sept'20), 
-			 		<i>with</i> <a href = "https://sites.google.com/site/thinhdoan210" target = "_blank">Thinh T. Doan</a>, and <a href = "https://disc.georgetown.domains" target = "_blank">Nitin Vaidya</a>. </br>
-			 		In this work, we extend our prior results on Byzantine fault-tolerant distributed optimization for server-based system artchitecture to the decentralized peer-to-peer system architecture. This paper presents the <i>first ever decentralized optimization algorithm with provable exact Byzantine fault-tolerance for high-dimensional optimization problems</i>. The paper has been accepted for the proceedings of the 2021 American Control Conference.
-			 	</li>
-
-<!--			 </p>
-
-			 	<li>
-			 		<b>Byzantine Fault-Tolerant Distributed Machine Learning Using Stochastic Gradient Descent (SGD) and Norm-Based Comparative Gradient Elimination (CGE)</b> (<a href = "https://arxiv.org/abs/2008.04699" target = "_blank">arXiv</a>, Aug'20), <i>with</i> Shuo Liu, and <a href = "https://disc.georgetown.domains" target = "_blank">Nitin Vaidya</a>. </br>
-			 		In this work, we show the applicability of a <i>norm-based gradient elimination</i> techinique (proposed by us) to Byzantine fault-tolerance in distributed stochastic gradient-descent method for distributed machine learning.
-			 	</li> -->
-
-			 </p>
-
-			 	<li>
-			 		<b>Iterative Pre-Conditioning for Expediting the Gradient-Descent Method: The Distributed Linear Least-Squares Problem</b> (<a href = "https://arxiv.org/abs/2008.02856" target = "_blank">arXiv</a>, Aug'20),
-			 		<i>with</i> Kushal Chakraborty, and <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Nikhil Chopra</a>. </br>
-			 		In this work, we propose the first ever distributed iterative optimization method with <i>superlinear rate of convergence</i>. Specifically, we show that a traditional gradient-descent method when coupled with an <i>iterative pre-conditioner matrix</i> can achieve superlinear convergence rate - unequivocally superior to state-of-the-art accelerated methods; namely Nesterov's accelerated method, heavy-ball method, and the quasi-Newton method called BFGS. (Variants of this work, showing improved robustness to system noise, have been published in the proceedings of the <a href = "https://ieeexplore.ieee.org/document/9147603" target = "_blank">2020 American Control Conference</a>, and <a href = "https://ieeexplore.ieee.org/document/9296730" target = "_blank">the IEEE Control Systems Letters - 2021</a>.)
-			 	</li>
-
-			 </p>
-
-			 	<li>
-			 		<b>Preserving Statistical Privacy in Distributed Optimization</b> (<a href = "https://arxiv.org/abs/2004.01312" target = "_blank">arXiv</a>, Aug'20), <i>with</i> Shripad Gade, <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Nikhil Chopra</a>, and <a href = "https://disc.georgetown.domains" target = "_blank">Nitin H. Vaidya</a>. </br>
-			 		We present a distributed optimization protocol that preserves statistical privacy of agents' local cost functions against a passive adversary that corrupts some agents in a peer-to-peer network <i>without</i>  affecting the correctness of the solution, unlike the more widely used and popular differential privacy protocols. The work has been published in the <a href = "https://ieeexplore.ieee.org/document/9129795" target = "_blank">IEEE Control Systems Letters, 2021</a>.
-			 	</li>
-
-			 <!-- </p>
-
-			 	<li>
-			 		<b>Fault-tolerance in Distributed Optimization: The Case of Redundancy</b> (<a href = "https://nirupam.georgetown.domains/my_files/2020/podc2020_final.pdf" target = "_blank">pdf</a>), <i>with</i> <a href = "https://disc.georgetown.domains" target = "_blank">Nitin Vaidya</a>. </br>
-			 		Published in the proceedings of <a href = "https://dl.acm.org/doi/abs/10.1145/3382734.3405748" target = "_blank">the 39th ACM Symposium on Principles of Distributed Computing (PODC'20)</a> <a href = "https://www.youtube.com/watch?v=SUv4sqRIdhg&feature=youtu.be" target = "_blank">[presentation video].</a> In this work, we partially solve the problem of Byzantine fault-tolerance in high-dimensional distributed optimization. Specifically, we derive a tight impossibility result for Byzantine fault-tolerant distributed optimization, and propose a computationally efficient fault-tolerance mechanism that renders the traditional dstirbuted gradient-descent method resilient against Byzantine faulty agents in the system. Extensions of this work can be found in technical reports; (1) <b>Resilience in Collaborative Optimization: Redundant and Independent Cost Functions</b> (<a href = "https://arxiv.org/abs/2003.09675" target = "_blank">arXiv</a>, March'20), and (2) <b>Byzantine Fault Tolerant Distributed Linear Regression</b> (<a href = "https://arxiv.org/abs/1903.08752">arXiv</a>, March'19). -->
-			 	</li>
-			</ul>
-
-			<hr>
-
-			<h3>Some highlights of my education -</h3>
-			<p> Besides literacy in three languages, namely Hindi (native), English, and Gujarati, I have also managed to obtain a couple of <a href = "https://en.wikipedia.org/wiki/Academic_degree" target = "_blank">academic degrees</a>: </p>
-
-			<ul>
-				<li>PhD in Mechanical Engineering from the <a href = "https://www.umd.edu" target = "_blank">University of Maryland College Park</a>, in 2018. </br> 
-					My dissertation was on <a href = "https://nirupam.georgetown.domains/my_files/2018/main_thesis.pdf" target = "_blank">Privacy in Distributed Multi-Agent Collaboration</a>, supervised by <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Nikhil Chopra</a>. I was also guided by <a href = "https://www.cs.umd.edu/~jkatz/" target = "_blank">Jonathan Katz</a>.</li>
-
-			</p>
-
-				<li> BTech in Electrical Engineering from the <a href = "http://www.iitd.ac.in" target = "_blank">	Indian Institute of Technology Delhi</a>, in 2013. </br>
-					My BTech thesis was on <a href = "https://nirupam.georgetown.domains/my_files/2013/btech_thesis.pdf" target = "_blank">Automatic Cardiac View Classification of Echocardiogram</a>, written under the supervision of <a href = "http://web.iitd.ac.in/~santanuc/" target = "_blank">Santanu Chaudhary</a>. </li>
-			</ul>		
-
-			<hr>
-			<p class="aligncenter">
-				<img src="https://nirupam.georgetown.domains/my_pictures/calvin_artist.jpg" style="width:25%" alt="Calvin and Hobbes"> 
-			</p>
-			
-		</div>	
-	</div> 
-
-<!-- Paper Listings -->
-
-<!-- 	<div class = "middle">
-			<hr>
-
-			<h2>Publications:</h2>
-			<ul>
-				<li>
-					<h3>Fault-tolerance in Distributed Optimization and Learning -</h3>
-					<ol>
-						<li>
-			 			Randomized Reactive Redundancy for Byzantine Fault-Tolerance in Parallelized Learning (<a href = "https://arxiv.org/abs/1912.09528" target = "_blank">arxiv</a>) 
-			 			<br /> <i>with</i> <a href = "https://disc.georgetown.domains" target = "_blank">Nitin Vaidya</a>.
-			 			<font color="navy">(2019)</font color="navy">.
-			 			</li>
-
-					    <li>
-			 			Byzantine Fault-Tolerant Parallelized Stochastic Gradient Descent for Linear Regression (<a href = "http://nirupam.georgetown.domains/my_files/2019/Allerton_2019.pdf" target = "_blank">pdf</a>) 
-			 			<br /> <i>with</i> <a href = "https://disc.georgetown.domains" target = "_blank">Nitin Vaidya</a>.
-			 			<font color="navy">Allerton Conference at University of Illinois at Urbana-Champaign (2019, IEEE)</font color="navy">.
-			 			</li>
-			 			
-						<li>
-			 			Byzantine Fault Tolerant Distributed Linear Regression (<a href = "https://arxiv.org/abs/1903.08752">arXiv</a>) 
-			 			<br /> <i>with</i> <a href = "https://disc.georgetown.domains" target = "_blank">Nitin Vaidya</a>.
-			 			<font color="navy">(2019)</font color="navy">.
-			 			</li>
-					</ol>
-				</li>
-				<li>
-					<h3>Privacy in Decentralized Computing -</h3>
-					<ol>
-						<li>
-			 			Information-Theoretic Privacy in Distributed Average Consensus: Bounded Integral Inputs (<a href = "https://arxiv.org/abs/1809.01794" target = "_blank">arXiv</a>)  
-			 			<br /> <i>with</i> <a href = "https://www.cs.umd.edu/~jkatz/" target = "_blank">Jonathan Katz</a>, <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Nikhil Chopra</a>. 
-			 			<font color="navy"><i>[Under review]</i> Automatica </font>.</li>
-			 			
-			 			<li>
-			 			Privacy of Agents' Costs in Peer-to-Peer Distributed Optimization (<a href = "https://arxiv.org/abs/1905.00733" target = "_blank">arXiv</a>)
-			 			<br /> <i>with</i> <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Nikhil Chopra</a>. </li>
-
-			 			<li>
-			 			Statistical Privacy in Distributed Average Consensus on Bounded Real Inputs (<a href = "https://arxiv.org/abs/1903.09315" target = "_blank">arxiv</a>) 
-			 			<br /> <i>with</i> <a href = "https://www.cs.umd.edu/~jkatz/" target = "_blank">Jonathan Katz</a>, <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Nikhil Chopra</a>. 
-			 			<font color="navy">American Control Conference (2019, IEEE)</font>.</li>
-
-			 			<li>
-			 			Privacy in Distributed Average Consensus (<a href = "http://nirupam.georgetown.domains/my_files/2017/ifac_2017.pdf" target = "_blank">pdf</a>) 
-			 			<br /> <i>with</i> <a href = "https://www.cs.umd.edu/~jkatz/" target = "_blank">Jonathan Katz</a>, <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Nikhil Chopra</a>. 
-			 			<font color="navy">IFAC World Congress (2017, Elsevier)</font>.</li>
-
-			 			<li>
-			 			<a href = "http://ieeexplore.ieee.org/abstract/document/7799302/" target = "_blank">Confidentiality in distributed average information consensus</a> 
-			 			<br /> <i>with</i> <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Nikhil Chopra</a>. 
-			 			<font color="navy">Conference on Decision and Control (2016, IEEE)</font>.</li>
-					</ol>
-				</li>
-
-				<li>
-					<h3>Fast and Robust Distributed Optimization -</h3>
-					<ol>
-					    <li>
-			 			On Distributed Solution of Ill-Conditioned System of Linear Equations under Communication Delays (<a href = "http://nirupam.georgetown.domains/my_files/2020/icc2020.pdf" target = "_blank">pdf</a>)
-			 			<br /> <i>with</i> Kushal Chakraborty, and <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Nikhil Chopra</a>.
-			 			<font color="navy"> Indian Control Conference (Dec' 2019, IEEE)</font color="navy">.
-			 			</li>
-			 			<li>
-			 			Iterative Pre-Conditioning to Expedite the Gradient-Descent Method (<a href = "http://nirupam.georgetown.domains/my_files/2020/acc2020.pdf" target = "_blank">pdf</a>)
-			 			<br /> <i>with</i> Kushal Chakraborty, and <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Nikhil Chopra</a>.
-			 			<font color="navy"> [Accepted] American Control Conference (2020, IEEE)</font color="navy">.
-			 			</li>
-					</ol>
-				</li>
-
-				<li>
-					<h3>Privacy for Networked Control Systems (NCS) -</h3>
-					<ol>
-						<li>
-			 			<i> Model-Based Privacy in Linear Time-Invariant Networked Control Systems</i>  
-			 			<br /> <i>with</i> <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Nikhil Chopra</a>. 
-			 			<font color="navy"><i>[Under Review]</i> Transactions on Automatic Control (IEEE) </font></li>
-
-			 			<li>
-			 			<i> <a href = "https://ieeexplore.ieee.org/abstract/document/8635912" target = "_blank">Model-Based Encryption: Privacy of States in Networked Control Systems</a></i> 
-			 			<br /> with <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Nikhil Chopra</a>. 
-			 			<font color="navy">Allerton Conference at University of Illinois at Urbana-Champaign (2018, IEEE)</font color="navy">.</li>
-					</ol>
-				</li>
-				<li>
-					<h3>Security of Cyber Physical Systems (CPS) -</h3>
-					<ol>
-						<li>
-			 			<i> <a href = "https://ieeexplore.ieee.org/abstract/document/8672594" target = "_blank">False Data Injection Attacks in Bilateral Teleoperation Systems</a></i> 
-			 			<br /> <i>with</i> Yimeng Dong, <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Nikhil Chopra</a>. 
-			 			<font color="navy">Transactions on Control Systems Technology (2019, IEEE)</font>.</li>
-
-			 			<li>
-			 			<a href = "http://ieeexplore.ieee.org/abstract/document/7963651/" target = "_blank"> <i> Robustness of distributive double-integrator consensus to loss of graph connectivity</i></a> 
-			 			<br /><i>with</i> Yimeng Dong, <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Nikhil Chopra</a>. 
-			 			<font color="navy">American Control Conference (2017, IEEE)</font>.</li>
-
-			 			<li>
-			 			<a href = "http://aip.scitation.org/doi/abs/10.1063/1.4965034" target = "_blank"> <i> Content modification attacks on consensus seeking multi-agent system with double-integrator dynamics</i></a> 
-			 			<br /> <i>with</i> Yimeng Dong, <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Nikhil Chopra</a>. 
-			 			<font color="navy">Chaos: An Interdisciplinary Journal of Nonlinear Science (2016, AIP)</font>.</li>
-
-			 			<li>
-			 			<a href = "http://ieeexplore.ieee.org/abstract/document/7524934/" target = "_blank"> <i> On content modification attacks in bilateral teleoperation systems</i></a> 
-			 			<br /><i>with</i> Yimeng Dong, <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Nikhil Chopra</a>. 
-			 			<font color="navy">American Control Conference (2016, IEEE) </font>.</li>
-					</ol>
-				</i>
-				<li>
-					<h4>Other Projects -</h4>
-					<ol>
-						<li>
-			 			<a href = "http://ieeexplore.ieee.org/abstract/document/7441129/" target = "_blank"> <i> Stability analysis of a two-channel feedback networked control system</i></a> 
-			 			<br /><i>with</i> <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Nikhil Chopra</a>. 
-			 			<font color="navy">Indian Control Conference (2016, IEEE)</font>.</li>
-
-			 			<li>
-				 		<a href = "http://nirupam.georgetown.domains/my_files/2018/distributed_computation_continuous_functions.pdf" target = "_blank">
-			 			<i> Distributed Computation of Continuous Functions Using Distributed Average Consensus</i></a>
-
-			 			<li>
-			 			<a href = "http://nirupam.georgetown.domains/my_files/2017/system_linear_equations_uncertain_coefficients.pdf" target = "_blank"><i> Solving System of Linear Equations With Uncertain Coefficients</i></a>
-
-			 			<li>
-						<a href = "http://nirupam.georgetown.domains/my_files/2018/one-time_pad_reals.pdf" target = "_blank"> <i> One-Time Pad For Real Values</i></a>
-
-						<li>
-						<a href = "http://nirupam.georgetown.domains/my_files/2016/boolean_constraints_nearest_neighbor.pdf" target = "_blank">
-						<i> Nearest Neighbor Based Heuristic Solution to Optimization Problems with Boolean Constraints</i></a> <br/> 
-
-						<li>
-						<a href = "http://nirupam.georgetown.domains/my_files/2017/MLF_autonomous_switched_systems.pdf" target = "_blank"> <i> Switched Autonomous Dynamic Systems</i></a>
-
-					</ol>
-				</li>
-			</ul>
-
-	</div> -->
-
 	
-
 	</body>
 
 
