@@ -1,424 +1,521 @@
 <!DOCTYPE HTML>
-
 <html lang="en-US">
-	<head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Nirupam Gupta">
+  <meta name="keywords" content="nirupam gupta, trustworthy machine learning, robust federated learning, differential privacy, Byzantine resilience, DIKU, University of Copenhagen">
+  <meta name="description" content="Personal webpage of Nirupam Gupta, Tenure-Track Assistant Professor at DIKU, University of Copenhagen. Research on robust and private machine learning.">
 
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name = "author" content = "Nirupam Gupta" /> 
-		<meta name = "keywords" content = "nirupam gupta" /> 
-		<meta name = "introduction" content = "Personal webpage, Nirupam Gupta" /> 
+  <title>निरुपम गुप्ता (Nirupam Gupta)</title>
 
-		<title>निरुपम गुप्ता (Nirupam Gupta) </title>
-		<style>
-			* {
-			  box-sizing:border-box;
-			}
-			.top{
-				display: table;
-  				width: 80%;
-				margin: auto;
+  <!-- Web fonts: a clean serif for headings + a friendly sans-serif for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-			  	font-size: 1.2em;
-			  	font-family: Arial, Helvetica, sans-serif;
-			  	letter-spacing: 0.03em;	
-			  	/*margin: 50px;*/
-			  	padding-top: 30px;
-			  	padding-left: 60px;
-			  	padding-right: 60px;
-			  	padding-bottom: 10px;
-			}
+  <style>
+    /* ---------- Reset & base ---------- */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #f7f6f2;            /* warm off-white -- easy on the eyes */
+      color: #1f2933;                 /* near-black, softer than pure #000 */
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      letter-spacing: 0.005em;
+      -webkit-font-smoothing: antialiased;
+    }
 
-			.middle{
-				width: 100%;
-				height: auto;
+    /* ---------- Colour palette ---------- */
+    :root {
+      --accent:        #00766b;       /* deep teal (refined version of original #00A79F) */
+      --accent-soft:   #d9ebe8;
+      --accent-dark:   #004f48;
+      --sidebar-bg:    #f1ede4;       /* warm cream, distinct from page background */
+      --sidebar-text:  #2b3540;       /* near-black for body text */
+      --sidebar-link:  #00564f;       /* dark teal, high contrast on cream */
+      --sidebar-muted: #6b7484;       /* for "On this page" label */
+      --rule:          #d9d6cd;
+      --muted:         #5a6573;
+      --card-bg:       #ffffff;
+      --highlight-bg:  #fff8e5;       /* soft cream for callouts */
+      --highlight-bd:  #e6c84d;
+    }
 
-			  	font-size: 1em;
-			  	/*font-family: "Times New Roman", Times, serif;*/
-			  	/* font-color: black; */
-			  	letter-spacing: 0.03em;
-			  	text-align: :left;
+    /* ---------- Layout container ---------- */
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 32px;
+    }
 
-			  	padding: 100px;
-			  	padding-top: 20px;
-			  	padding-bottom: 10px;
-			}
+    /* ---------- Header: profile + bio side by side, responsive ---------- */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 36px;
+      align-items: start;
+    }
 
-			.split_left{
-				display: table-cell; 
-				vertical-align: top; /*Important for proper alignment*/
-/* 				font-family: Arial, Helvetica, sans-serif; */
-				font-family: "Times New Roman", Times, serif;
-				font-size: 80%;
-				color: #fefefe;
+    .sidebar {
+      background: var(--sidebar-bg);
+      color: var(--sidebar-text);
+      padding: 24px 22px;
+      border-radius: 8px;
+      border: 1px solid var(--rule);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .sidebar img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+      background: #006f6f;
+    }
+    .sidebar hr {
+      border: none;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      margin: 16px 0;
+    }
+    .sidebar p {
+      margin: 8px 0;
+      font-size: 0.95rem;
+      line-height: 1.9;
+    }
+    .sidebar a {
+      color: var(--sidebar-link);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0,118,107,0.25);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .sidebar a:visited {
+      color: var(--sidebar-link);
+    }
+    .sidebar a:hover {
+      color: var(--accent-dark);
+      border-bottom-color: var(--accent-dark);
+    }
+    .sidebar .nav-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sidebar-muted);
+      margin-top: 6px;
+      margin-bottom: 4px;
+    }
 
-/* 				background-color: #ff0000; */ /*EPFL Red */
-				letter-spacing: 0.05em;
-/* 				background-color: #041E42; */ /* Georgetown Blue */ 
-/* 				background-color: #00569D; /*  Sky Blue */ 
-				background-color: #000000; /* Black */
-				padding: 20px;
+    /* ---------- Main column ---------- */
+    .main { min-width: 0; } /* prevents grid overflow on narrow screens */
+    .main h1 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 600;
+      font-size: 1.85rem;
+      line-height: 1.25;
+      margin: 4px 0 14px 0;
+      color: #0f1722;
+    }
+    .main h1 .lang-script {
+      font-weight: 400;
+      color: var(--muted);
+      font-style: italic;
+    }
+    .main p {
+      margin: 0 0 14px 0;
+    }
+    .lead {
+      font-size: 1.05rem;
+      color: #2b3540;
+    }
+    .label {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 600;
+      color: var(--accent-dark);
+    }
 
-				padding-top: 20px;
-				padding-bottom: 20px;
+    /* ---------- Links ---------- */
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    a:hover { color: var(--accent-dark); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:visited { color: var(--accent-dark); }
 
-			  	width:18%; /* The width is 20%, by default */
-			  	/*height: auto;*/
-			}
-			.split_right{
-				display: table-cell;
-				vertical-align: top;
-				/*float: right;*/
-				font-family: Arial, Helvetica, sans-serif;
-				background-color: #fefefe;
-				width:80%; /* The width is 20%, by default */
-			  	/*height: auto;*/
-			  	letter-spacing: 0.05em;
+    /* ---------- Sections below the header ---------- */
+    .section {
+      margin-top: 42px;
+      padding-top: 30px;
+      border-top: 1px solid var(--rule);
+    }
+    .section h2 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 600;
+      font-size: 1.4rem;
+      margin: 0 0 18px 0;
+      color: #0f1722;
+      letter-spacing: 0.005em;
+    }
+    .section h2 .anchor-tag {
+      display: inline-block;
+      margin-left: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      vertical-align: middle;
+      font-weight: 500;
+    }
 
-				padding: 20px;
-			  	padding-bottom: 20px;
+    /* ---------- Quote ---------- */
+    .quote {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      text-align: center;
+      color: #2b3540;
+      max-width: 720px;
+      margin: 6px auto 6px auto;
+      padding: 18px 24px;
+      line-height: 1.6;
+    }
+    .quote .attrib {
+      display: block;
+      margin-top: 8px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
 
-			  	color = black;	
-			  	text-align: start;		  	
-			}
+    /* ---------- Publication list ---------- */
+    .pub-list {
+      padding-left: 22px;
+      margin: 0;
+    }
+    .pub-list li {
+      margin-bottom: 12px;
+      line-height: 1.55;
+      font-size: 0.96rem;
+    }
+    .pub-list .venue {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .pub-list .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #8a5a00;
+      background: var(--highlight-bg);
+      border: 1px solid var(--highlight-bd);
+      padding: 1px 8px;
+      border-radius: 8px;
+      margin-left: 6px;
+      vertical-align: 1px;
+    }
+    .alpha-mark {
+      display: inline-block;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-style: italic;
+      font-size: 0.9em;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 0 6px;
+      border-radius: 8px;
+      margin-left: 4px;
+      vertical-align: 1px;
+      cursor: help;
+    }
 
-			/* Use a media query to add a break point at 600px: */
-			@media screen and (max-width:1200px) {
-				.top{
-					padding: 60px;
-					width: 60%;
-				}
-				.split_left{
-					width:25%;
-					padding: 20px;
-				}	
-				.split_right{
-					width:75%;
-					padding: 100px;
-				}
-				.middle{
-					padding: 40px;
-				}
-			}
+    /* ---------- Footer ---------- */
+    footer {
+      margin-top: 50px;
+      padding: 24px 0;
+      border-top: 1px solid var(--rule);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
 
-			@media screen and (max-width:800px) {
-				.top{
-					padding: 40px;
-					width: 70%;
-				}
-				.split_left{
-					width:25%;
-					font-size: 90%;
-					padding: 20px;
-				}	
-				.split_right{
-					width:75%;
-					font-size: 90%;
-					padding: 60px;
-				}
-				.middle{
-					padding: 20px;
-				}
-			}
+    /* ============================================================
+       Responsive breakpoints
+       ============================================================ */
 
-			@media screen and (max-width:500px) {
-				.top{
-					padding: 20px;
-					width: 100%;
-					font-size: 70%;
-				}
-			  .split_left, .split_right {
-			  	display: table;
-			    width:100%; /* The width is 100%, when the viewport is 600px or smaller */
-			    /* font-size: 70%; */
-			    padding: 20px;
-			  }
-			  .middle{
-			  	font-size: 50%;
-			  	padding: 10px;
-			  }
-			 }
+    /* Tablets ~1024px and below: tighten gutters */
+    @media (max-width: 1024px) {
+      .container { padding: 24px 24px; }
+      .profile-grid { grid-template-columns: 220px 1fr; gap: 28px; }
+      .main h1 { font-size: 1.7rem; }
+    }
 
-/*			body {
-			    background-color: white;
-			}*/
+    /* Small tablets / large phones: stack sidebar on top of bio */
+    @media (max-width: 760px) {
+      .container { padding: 20px 18px; }
+      .profile-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .sidebar {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 18px;
+        align-items: start;
+      }
+      .sidebar img { max-width: 140px; }
+      .sidebar hr { display: none; }
+      .sidebar .sidebar-content {
+        font-size: 0.95rem;
+      }
+      .main h1 { font-size: 1.5rem; }
+      .section { margin-top: 32px; padding-top: 22px; }
+      .section h2 { font-size: 1.25rem; }
+      .quote { font-size: 1rem; padding: 12px 8px; }
+    }
 
-			img{
-				background-color: #006f6f;
-			}
-			h2 {
-				text-align: center;
-			}
-			p {
-			    /*font-family: "sans-serif", Helvetica, sans-serif;*/
-			    	font-size: 100%;
-				text-align: left;
-			    	letter-spacing: 0.035em;
-			    	line-height:150%;
-			    	padding-left: 10px;
-			    	padding-right:10px;
-			    	padding-bottom: 5px;
-			}
-			p.aligncenter {
-				font-family: "Times New Roman", Times, serif;
-    				text-align: center;
-				letter-spacing: 0.035em;
-			    	line-height:150%;
-			    	padding-left: 10px;
-			    	padding-right:10px;
-			    	padding-bottom: 5px;
-				padding-top: 10px;
-			}
-			a {
-				text-decoration: none;
-/* 				font-style: italic; */
-				/*color: #006f6f;*/
-				color: #00A79F;
-			}
-			a:visited {
-  				color: #007480;
-			}
-			a.left {
-				color: #fefefe;
-			}
-			a.left:visited{
-				color: #fefefe;
-			}
-			ol {
-			    /*font-family: "sans-serif";*/
-			    letter-spacing: 0.02em;
-			    font-size: 90%;
-			    line-height:200%
-			}
-			li {
-			    line-height:150%;
-				margin: 10px 0px 10px 0px;
-			}
-			ul{
-				font-size: 100%;
-				letter-spacing: 0.04em;
-				line-height:150%;*/
-				margin-bottom:10px;
-			}
-			div.clearfix {
-    				padding: 5px;
-    				overflow: auto;
-    				font-family: "Times New Roman", Times, serif;
-			    	font-size: 20px;
-			}
-/*			img {
-			    float: left;
-			    margin: 25px 50px 10px 10px;
-			}*/
-		</style>
-	</head>
+    /* Phones ~480px and below: single column, sidebar fully stacked */
+    @media (max-width: 480px) {
+      body { font-size: 15px; }
+      .container { padding: 16px 14px; }
+      .sidebar {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .sidebar img {
+        max-width: 180px;
+        margin: 0 auto;
+      }
+      .sidebar p { text-align: center; }
+      .pub-list { padding-left: 18px; }
+      .pub-list li { font-size: 0.93rem; }
+    }
+  </style>
+</head>
 
-	<body>
-	    <!-- Profile picture and contact info -->
-	<div class = "top">
-		<div class = "split_left">
-				<img src="https://nirupam115.github.io/mandu.jpg" style="width:100%" alt="Nirupam Gupta">
+<body>
 
-				<hr>
-			<p>
-<!-- 				{1st-name}.gupta@epfl.ch </br> -->
-			
-				<a class = "left" href = "https://nirupam115.github.io/full_CV.pdf" target = "_blank">C.V.</a> </br>
+  <div class="container">
 
-				<a class = "left" href = "https://scholar.google.com/citations?user=WmMys-YAAAAJ" target = "_blank">Google Scholar</a> </br>
+    <!-- ============ HEADER: photo + intro ============ -->
+    <div class="profile-grid">
 
-				<a class = "left" href = "https://www.linkedin.com/in/niru-gupta/" target = "_blank">LinkedIn</a> 
-			</p>
-			
-			<p>
-				People </br>
+      <aside class="sidebar">
+        <img src="https://nirupam115.github.io/mandu.jpg" alt="Nirupam Gupta">
 
-				<a class="left" href="#ongoing-projects">Ongoing Projects</a> </br>
-			
-				<a class="left" href="#publications">Publications</a> </br>
+        <hr>
+        <div class="sidebar-content">
+          <p>
+            <a href="https://nirupam115.github.io/full_CV.pdf" target="_blank">C.V.</a><br>
+            <a href="https://scholar.google.com/citations?user=WmMys-YAAAAJ" target="_blank">Google Scholar</a><br>
+            <a href="https://www.linkedin.com/in/niru-gupta/" target="_blank">LinkedIn</a>
+          </p>
 
-				<a class = "left" href = "https://link.springer.com/book/10.1007/978-981-97-0688-4" target = "_blank">Book</a>
+          <p class="nav-label">On this page</p>
+          <p>
+            <a href="#projects">Ongoing Projects</a><br>
+            <a href="#publications">Publications</a><br>
+            <a href="https://link.springer.com/book/10.1007/978-981-97-0688-4" target="_blank">Book</a>
+          </p>
+        </div>
+      </aside>
 
-			</p>
-				<!-- <hr>
-				<p style="color:#d1d1d1"> My favourite - 
-					<ul style="color:#d1d1d1">
-						<li>Music, </li>
+      <section class="main">
+        <h1>
+          <span class="lang-script">निरुपम गुप्ता</span> &nbsp;/&nbsp; Nirupam Gupta
+        </h1>
 
-						<li>Movies, </li>
+        <p class="lead">
+          I am a Tenure-Track Assistant Professor in the
+          <a href="https://di.ku.dk/english/research/machine-learning/" target="_blank">ML Section</a>
+          of the Department of Computer Science at the University of Copenhagen (DIKU).
+          Before joining DIKU, I was a postdoctoral researcher at EPFL (Switzerland)
+          and Georgetown University (USA). I obtained my PhD from the University of Maryland — College Park
+          and my Bachelor's degree from IIT Delhi.
+        </p>
 
-						<li>Books, and </li>
+        <p>
+          <span class="label">Research.</span>
+          I work on the foundations of <em>trustworthy machine learning</em>, focusing on
+          <em>robustness</em> and <em>privacy</em> in distributed and federated learning. My goal
+          is to make rigorous protection of patients, users and models a practical default in real
+          AI deployments — rather than a guarantee that exists only on paper. A pedagogical
+          introduction to the robustness side of this work is in my book
+          <a href="https://link.springer.com/book/10.1007/978-981-97-0688-4" target="_blank">Robust
+          Machine Learning: Distributed Methods for Safe AI</a> (Springer, 2024). Active projects
+          are listed <a href="#projects">below</a>.
+        </p>
 
-						<li>Places. </li>				
-					</ul>
-				</p> -->
+        <p>
+          <span class="label">Teaching.</span>
+          At DIKU I teach
+          <a href="https://sites.google.com/diku.edu/machine-learning-courses/primal" target="_blank">Privacy
+          in Machine Learning (PriMaL)</a>,
+          <a href="https://sites.google.com/diku.edu/machine-learning-courses/mlb" target="_blank">Machine
+          Learning B (MLB)</a>, and a new course on <em>Robust Machine Learning</em> launching in
+          2026–27. PriMaL runs in the Fall and MLB in the Spring; both support hybrid and fully
+          remote participation. Course details are on the
+          <a href="https://sites.google.com/diku.edu/machine-learning-courses" target="_blank">DIKU
+          ML courses site</a>.
+        </p>
 
-				<!-- <hr>
-				<p>Also, check out these links - </br> 
-				</p>
-				<a href = "https://www.washingtonpost.com/graphics/2020/world/corona-simulator/?itid=sf_coronavirus" target = "_blank">Modelling a pandemic</a> </p>
-				<a href = "https://randomstreetview.com" target = "_blank">Random street view</a> </p>
-				<a href = "https://www.pratilipi.com" target = "_blank">Pratilipi</a> </p> -->
-				
-<!-- 				<hr> -->
-			<!--</p>
-				"... either a worldly success, or a beloved failure." </p>
-				- James Hilton -->
+        <!-- The quote, untouched -->
+        <p class="quote">
+          “It seems complex only because of ignorance; otherwise everything is simple.”
+          <span class="attrib">— OSHO (The Book of Secrets)</span>
+        </p>
+      </section>
+    </div>
 
-<!-- 			</p>
-				"Haste makes no speed." </br>
-				- <i>H. Hesse</i> -->
+    <!-- ============ ONGOING PROJECTS ============ -->
+    <div class="section" id="projects">
+      <h2>Ongoing Projects</h2>
 
-		</div>
-		
-        <!-- Introduction -->
-		<div class = "split_right">
-			<!-- <hr> -->
-			<h2>निरुपम गुप्ता / Nirupam Gupta</h2>
-			<p>
-				I am a Tenure-Track Assistant Professor in the <a href = "https://di.ku.dk/english/research/machine-learning/" target = "_blank">ML Section</a> 
-				of the Department of Computer Science at University of Copenhagen (DIKU). Before joining DIKU, I was a Postdoctoral Researcher in the School of Computer Science at EPFL (Switzerland)
-				and the Department of Computer Science at Georgetown University (USA). I obtained my PhD from University of Maryland College Park (USA) and my Bachelor's degree from Indian Institute of Technology (IIT) Delhi (India).
-<!-- 				In the past, I have worked as a postdoc 
-				in the School of Computer Science at the EPFL (Switzerland), with <a href = "http://lpdwww.epfl.ch/rachid/index.html" target = "_blank">Prof. Rachid Guerraoui</a>  
-				and have also had the pleasure of working as postdoc with 
-				<a href = "https://disc.georgetown.domains" target = "_blank">Prof. Nitin Vaidya</a>. I received my PhD from University of Maryland College Park (USA), 
-				under the supervision of <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Prof. Nikhil Chopra</a>.  -->
-				<!-- If you wish to contact me, that information can be found on <a href = "https://nirupam115.github.io/full_CV.pdf" target = "_blank">my CV</a>.  -->
-			</p>
-			<p>
-				<b>Research.</b> I work primarily on distributed machine learning (a.k.a. federated learning) algorithms, focusing on the challenges of 
-				<i>robustness</i> and <i>privacy</i>. To learn about the basics of robustness in the context of distributed learning, check out my latest book 
-				<a href = "https://link.springer.com/book/10.1007/978-981-97-0688-4" target = "_blank">Robust Machine Learning: Distributed Methods for Safe AI</a>. 
-				I have several ongoing projects on these topics. Some of these projects are highlighted <a href="#ongoing-projects">here below</a>.
-			</p>
-			<p>
-				<b>Teaching.</b> I teach <a href = "https://sites.google.com/diku.edu/machine-learning-courses/primal" target = "_blank">Privacy in Machine Learning (PriMaL)</a> 
-				and <a href = "https://sites.google.com/diku.edu/machine-learning-courses/mlb" target = "_blank">Machine Learning B (MLB)</a> at DIKU. PriMaL is offered in the Fall semester,
-				while MLB is offered in the Spring semester. Both these courses are offered in a hybrid format, and support fully remote participation. 
-				For more details, such as course registration, check out this <a href = "https://sites.google.com/diku.edu/machine-learning-courses" target = "_blank">website for ML courses at DIKU</a>.
-			</p>
-<!-- 			<p>
-				<b style="color:blue;">Open Positions!!</b> I am looking for PhD students and Postdocs who would be interested in working on issues of robustness, privacy and fairness in modern machine learning algorithms. 
-				To know more on these topics and their critical role in developing <b> safe and responsible AI </b> technologies, take a look at <a href = "https://link.springer.com/book/10.1007/978-981-97-0688-4" target = "_blank"> my aforementioned book </a> 
-				and <a href = "https://link.springer.com/book/10.1007/978-3-031-54827-7" target = "_blank">this guide on LLMs in Cybersecurity</a>. </br>
-				If you are interested in any of these positions, please write me an email and take a look at these DDSA (Danish Data Science Academy) opportunities for <a href = "https://ddsa.dk/phdfellowshipcall2025/" target = "_blank"> PhD Fellowship </a> 
-				and <a href = "https://ddsa.dk/postdocfellowshipcall2025/" target = "_blank"> Postdoc Fellowship </a>. <b> Deadline for both calls: March 5, 2025 </b>.
-			</p> -->
-			
-<!-- 			<p class = "aligncenter">
-				"Not in their speech, not in their thoughts, I see their greatness, only in their actions, in their life." </br>
-				<b> - Hermann Hesse (Siddhartha) </b>
-			</p> -->
-			
-			<!-- <p>
-				<span style="color: blueviolet; font-weight: bold;">!!Open PhD call!!</span> I am currently looking for a motivated PhD student to work in collaboration with me, 
-				<a href = "https://rpinot.github.io" target = "_blank">Rafael Pinot</a> and <a href = "https://researchers.lille.inria.fr/abellet/" target = "_blank">Aurélien Bellet</a> on the topic of robustness in machine learning. 
-				Details of the PhD call can be found <a href = "phd_calls/amortized-robustness-2026.pdf" target = "_blank">here</a>. 
-				The <b>position will tentatively start in April 2026</b>, as a research internship and continue as a PhD position from September 2026. Please contact us (details in the call) if you are interested.
-			</p> -->
-			
-			<p class = "aligncenter">
-				"It seems complex only because of ignorance; otherwise everything is simple." </br>
-				<b> - OSHO (The Book of Secrets) </b>
-			</p>
+      <p>
+        Below are the main research directions I am currently working on. I am always happy to
+        hear from motivated students and researchers interested in any of these threads — feel
+        free to reach out at <strong>nigu[at]di.ku.dk</strong>.
+      </p>
 
+      <ol>
+        <li>
+          <strong>Trustworthy Federated Learning under Realistic Threats.</strong>
+          Federated learning lets multiple parties train a shared model without exchanging raw
+          data, but real-world deployments face partial trust, communication constraints,
+          heterogeneous data, and corruptions of many kinds — from inadvertent issues like
+          missing modalities or broken sensors, to deliberate ones like mislabelled training
+          data, erroneous gradient updates, or malicious clients. The rigorous tools that exist
+          for these problems — differential privacy and Byzantine resilience — calibrate their
+          protections to a worst-case, all-knowing adversary, which forces so much protective
+          noise into training that accuracy collapses. This project develops a unified framework
+          — <em>expected adversarial sensitivity (EAS)</em> — that calibrates privacy and
+          robustness to realistic, auditable threat models instead, with reconstruction-risk
+          certificates, robust aggregation tailored to bounded adversaries, and audit tools any
+          practitioner can use. The aim is to make rigorous safeguards a practical default in
+          deployed ML rather than a guarantee that exists only on paper. Background reading: my
+          book on
+          <a href="https://link.springer.com/book/10.1007/978-981-97-0688-4" target="_blank">Robust
+          Machine Learning</a> and my chapter in
+          <a href="https://library.oapen.org/handle/20.500.12657/90897" target="_blank">Large
+          Language Models in Cybersecurity</a> on the difficulty of provable robustness and
+          privacy for LLMs.
+          <em>Current collaborators:</em> EPFL, INRIA, Sorbonne University.
+        </li>
 
-<!--             <p> <b>Research Work:</b> Broadly, I am interested in design and analysis of algorithms for distributed optimization and machine learning. 
-				My recent research work focuses on Byzantine fault-tolerance (or robustness to adversarial nodes) in distributed (including decentralized) machine learning. 
-				Some of the challenges in this topic that I am currently pursuing are data heterogeneity, (differential) privacy constraints, and sparse communication topology. </br>
+        <li>
+          <strong>Robustness in Decentralised Learning over Sparse Communication Graphs.</strong>
+          Peer-to-peer learning when no central server exists and the communication graph is
+          sparse: how to guarantee reliable model updates in the presence of misbehaving nodes,
+          and how to trade off communication efficiency against robustness. Applications include
+          distributed sensor networks, edge computing and drone networks where existing
+          centralised assumptions break down.
+        </li>
+      </ol>
+    </div>
 
-				In the past, I have also worked on pre-conditioning of the gradient-descent method, applied to the distributed optimization framework. 
-				During my PhD, my work primarily focused on the issues of robustness (to adversarial actors) and privacy in distributed optimization and average consensus. </br>
-				
-				For an updated list of my publications, please visit <a href = "https://dblp.org/pid/192/3250.html" target = "_blank">my DBLP profile</a>.
-			</p>	
+    <!-- ============ PUBLICATIONS ============ -->
+    <div class="section" id="publications">
+      <h2>Recent Publications <span class="anchor-tag">last 5 years</span></h2>
 
-            <p> <b>Teaching:</b> I have given guest lectures on the topic of byzantine robustness in distributed machine learning in the distributed algorithms
-				course, taught by Prof. Rachid Guerraoui at EPFL. During my postdoc at Georgetown University, I offered a seminar course on the topic of distributed machine learning</i>.
-			</p> -->
+      <p>
+        A complete list is available on my
+        <a href="https://dblp.org/pid/192/3250.html" target="_blank">DBLP profile</a> and
+        <a href="https://scholar.google.com/citations?user=WmMys-YAAAAJ" target="_blank">Google
+        Scholar</a>. Entries marked <span class="alpha-mark">α</span> follow the alphabetical
+        author-order convention common in CS&nbsp;theory.
+      </p>
 
-		</div>
+      <ol class="pub-list"><li>
+          <strong>Tight Stability Bounds for Robust Distributed Learning: Byzantine Failures Hurt
+          Generalization More than Data Poisoning.</strong>
+          <em>Thomas Boudou, Batiste Le Bars, Nirupam Gupta, Aurélien Bellet.</em>
+          <span class="venue">ICML 2026.</span>
+        </li>
+        <li>
+          <strong>On the Relevance of Byzantine Robust Optimization Against Data Poisoning.</strong> <span class="alpha-mark" title="Authors listed alphabetically">α</span>
+          <em>Sadegh Farhadkhani, Rachid Guerraoui, Nirupam Gupta, Rafael Pinot.</em>
+          <span class="venue">JMLR 2026.</span>
+        </li>
+        <li>
+          <strong>Robust Federated Inference.</strong> <span class="alpha-mark" title="Authors listed alphabetically">α</span>
+          <em>Akash Dhasade, Sadegh Farhadkhani, Rachid Guerraoui, Nirupam Gupta, Maxime
+          Jacovella, Anne-Marie Kermarrec, Rafael Pinot.</em>
+          <span class="venue">ICLR 2026.</span>
+        </li>
+        <li>
+          <strong>Reconciling Communication Compression and Byzantine-Robustness in Distributed
+          Learning.</strong>
+          <em>Diksha Gupta, Nirupam Gupta, Antonio Honsell, Giovanni Neglia, Chuan Xu.</em>
+          <span class="venue">AISTATS 2026.</span>
+        </li>
+        <li>
+          <strong>Adaptive Gradient Clipping for Robust Federated Learning.</strong> <span class="alpha-mark" title="Authors listed alphabetically">α</span>
+          <em>Youssef Allouah, Rachid Guerraoui, Nirupam Gupta, Ahmed Jellouli, Geovani Rizk, John
+          Stephan.</em>
+          <span class="venue">ICLR 2025.</span>
+          <span class="badge">Spotlight · top 5%</span>
+        </li>
+        <li>
+          <strong>Revisiting Ensembling in One-Shot Federated Learning.</strong> <span class="alpha-mark" title="Authors listed alphabetically">α</span>
+          <em>Youssef Allouah, Akash Dhasade, Rachid Guerraoui, Nirupam Gupta, Anne-Marie
+          Kermarrec, Rafael Pinot, Rafael Pires, Rishi Sharma.</em>
+          <span class="venue">NeurIPS 2024.</span>
+        </li>
+        <li>
+          <strong>Fine-Tuning Personalization in Federated Learning to Mitigate Adversarial
+          Clients.</strong> <span class="alpha-mark" title="Authors listed alphabetically">α</span>
+          <em>Youssef Allouah, Abdellah El Mrini, Rachid Guerraoui, Nirupam Gupta, Rafael
+          Pinot.</em>
+          <span class="venue">NeurIPS 2024.</span>
+        </li>
+        <li>
+          <strong>Tackling Byzantine Clients in Federated Learning.</strong> <span class="alpha-mark" title="Authors listed alphabetically">α</span>
+          <em>Youssef Allouah, Sadegh Farhadkhani, Rachid Guerraoui, Nirupam Gupta, Rafael Pinot,
+          Geovani Rizk, Sasha Voitovych.</em>
+          <span class="venue">ICML 2024.</span>
+        </li>
+        <li>
+          <strong>Robust Distributed Learning: Tight Error Bounds and Breakdown Point under Data
+          Heterogeneity.</strong> <span class="alpha-mark" title="Authors listed alphabetically">α</span>
+          <em>Youssef Allouah, Rachid Guerraoui, Nirupam Gupta, Rafael Pinot, Geovani Rizk.</em>
+          <span class="venue">NeurIPS 2023.</span>
+          <span class="badge">Spotlight · top 5%</span>
+        </li>
+        <li>
+          <strong>On the Privacy-Robustness-Utility Trilemma in Distributed Learning.</strong> <span class="alpha-mark" title="Authors listed alphabetically">α</span>
+          <em>Youssef Allouah, Rachid Guerraoui, Nirupam Gupta, Rafael Pinot, John Stephan.</em>
+          <span class="venue">ICML 2023.</span>
+        </li>
+        <li>
+          <strong>Robust Collaborative Learning with Linear Gradient Overhead.</strong> <span class="alpha-mark" title="Authors listed alphabetically">α</span>
+          <em>Sadegh Farhadkhani, Rachid Guerraoui, Nirupam Gupta, Lê-Nguyên Hoang, Rafael Pinot,
+          John Stephan.</em>
+          <span class="venue">ICML 2023.</span>
+        </li>
+        <li>
+          <strong>Fixing by Mixing: A Recipe for Optimal Byzantine ML under Heterogeneity.</strong> <span class="alpha-mark" title="Authors listed alphabetically">α</span>
+          <em>Youssef Allouah, Sadegh Farhadkhani, Rachid Guerraoui, Nirupam Gupta, Rafael Pinot,
+          John Stephan.</em>
+          <span class="venue">AISTATS 2023.</span>
+        </li>
+        <li>
+          <strong>Byzantine Machine Learning Made Easy by Resilient Averaging of Momentums.</strong> <span class="alpha-mark" title="Authors listed alphabetically">α</span>
+          <em>Sadegh Farhadkhani, Rachid Guerraoui, Nirupam Gupta, Rafael Pinot, John Stephan.</em>
+          <span class="venue">ICML 2022.</span>
+        </li>
+      </ol>
+    </div>
 
-	</div>
+    <footer>
+      &copy; 2026 Nirupam Gupta. All rights reserved.
+    </footer>
 
-	<div class = "top">
-		<hr>
-			<h2 id="ongoing-projects">Upcoming Talks & Events - </h2>
-			<p>
-				<ul>
-					<li> <strong>Lecture:</strong> "Robust Distributed Learning: A Quest to Learning in Untrusted Environments", <a href="https://sptdc2026.ics.forth.gr" target="_blank">School on the Practice and Theory of Distributed Computing (SPTDC)</a>, April 28, 2026, Heraklion, Greece. </li>
-				</ul>
-				<ul>
-					<li> <strong>Summer school:</strong> <a href="https://ltsscopenhagen.github.io" target="_blank">Learning Theory School and Workshop in Copenhagen</a>, June 22 - 27, 2026, Copenhagen, Denmark. </li>
-				</ul>
-			</p>
-		
-	</div>
+  </div>
 
-
-		<div class = "top">
-			<hr>
-			<h2 id="ongoing-projects">Ongoing Projects - </h2>
-			<p>
-				<strong>I'm looking for motivated PhD students and Postdocs</strong>, to work with me on the following topics. If you are interested in any of these projects, please feel free to reach out to me (nigu[at]di.ku.dk).
-			</p>
-			<ol>
-				<li> <strong>Robust and Private Federated Learning over Heterogeneous Data.</strong>  
-					While traditional federated learning approaches focus on model accuracy, this project aims to enhance both robustness and privacy in federated settings, particularly when dealing with heterogeneous data distributions.
-					Challenges include addressing robustness against data and model poisoning in presence of data heterogeneity, ensuring privacy constraints (such as differential privacy), and optimizing communication efficiency. 
-					This project will explore novel algorithms and frameworks to tackle these challenges effectively.
-					Main focus of the project is theory and algorithm design. Applications include healthcare, finance, and other domains where data privacy is crucial. </br>
-					As part of this project, I have co-authored this book <a href="https://link.springer.com/book/10.1007/978-981-97-0688-4" target = "_blank">Robust Machine Learning: Distributed Methods for Safe AI</a> that provides a pedagogical overview of robust machine learning.
-					Additionally, I have contributed a chapter in this (open access) book <a href="https://library.oapen.org/handle/20.500.12657/90897" target = "_blank">Large Language Models in Cybersecurity</a>, highlighting the
-					difficulty for achieving provable robustness & privacy in LLMs.</br>
-					<span style="color: blue; font-weight: bold;">Call for collaboration:</span> If you are interested in collaborating, please reach out! I am currently collaborating with researchers from EPFL, INRIA (Montpellier & Sofia-Antilpolis) and Sorbonne University on various aspects of this project. </span></li>
-
-				<li> <span style="font-weight: bold;">Robustness in Decentralized Learning over Sparse Communication Graphs.</span> In a peer-to-peer (P2P) setting, this project investigates the robustness of decentralized learning algorithms when communication is limited to a sparse graph structure. 
-					Key challenges include ensuring reliable model updates despite potential adversarial nodes and optimizing the trade-off between communication efficiency and learning accuracy. 
-					Existing approaches on robustness often rely on either centralized architectures or strong assumptions about the communication graph, which may not be feasible in decentralized settings. 
-					Applications include distributed sensor networks, edge computing, and other scenarios such as drone networks where robustness against communication/node failures is essential.</li>
-				<!-- <li> <strong>Robust Federated Inference.</strong> This project focuses on enhancing the robustness of federated inference mechanisms, ensuring reliable and accurate predictions even in the presence of adversarial clients or unreliable communication channels.</li>
-				<li> <strong>Fairness in Robust Distributed Learning.</strong> This project aims to address fairness concerns in distributed learning settings, ensuring that models are not only robust but also equitable across different user groups and data distributions.</li>
-				<li> <strong>Robustness in Large Language Models (LLMs).</strong> This project investigates the unique challenges of ensuring robustness in LLMs, particularly in the context of adversarial attacks and data poisoning.</li> -->
-			</ol>
-		</div>
-
-		<div class = "top">
-			<hr>
-			<h2 id="publications">Recent Publications (last 5 years) - </h2>
-			A complete list of my publications can be found on my <a href = "https://dblp.org/pid/192/3250.html" target = "_blank">DBLP profile</a> and <a href = "https://scholar.google.com/citations?user=WmMys-YAAAAJ" target = "_blank">Google Scholar profile</a>. 
-			Here are some of my recent publications from the last 5 years, authors listed in alphabetical order.
-			<ol>
-				<li> <strong> Tight Stability Bounds for Robust Distributed Learning: Byzantine Failures Hurt Generalization More than Data Poisoning. </strong> <em>Thomas Boudou, Batiste Le Bars, Nirupam Gupta, and Aurélien Bellet.</em>
-					International Conference on Machine Learning (ICML), 2026. </li>
-				<li> <strong> On the Relevance of Byzantine Robust Optimization Against Data Poisoning. </strong> <em>Sadegh Farhadkhani, Rachid Guerraoui, Nirupam Gupta, and Rafael Pinot.</em>
-					Journal of Machine Learning (JMLR), 2026. </li>
-				<li> <strong> Robust Federated Inference. </strong> <em>Akash Dhasade, Sadegh Farhadkhani, Rachid Guerraoui, Nirupam Gupta, Maxime Jacovella, Anne-Marie Kermarrec, Rafael Pinot.</em>
-					International Conference on Learning Representations (ICLR), 2026. </li>
-				<li> <strong> Reconciling Communication Compression and Byzantine-Robustness in Distributed Learning. </strong> <em>Diksha Gupta, Nirupam Gupta, Antonio Honsell, Giovanni Neglia and Chuan Xu.</em> Proceedings of the 29th International Conference on Artificial Intelligence and Statistics (AISTATS), 2026.</li>
-				<li> <strong> Adaptive Gradient Clipping for Robust Federated Learning. </strong> <em>Youssef Allouah, Rachid Guerraoui, Nirupam Gupta, Ahmed Jellouli, Geovani Rizk, and John Stephan.</em>
-					International Conference on Learning Representations (ICLR), 2025 [<em>Spotlight, acceptance rate of 5%</em>]. </li>
-				<li> <strong>Revisiting Ensembling in One-Shot Federated Learning.</strong> <em>Youssef Allouah, Akash Dhasade, Rachid Guerraoui, Nirupam Gupta, Anne-Marie Kermarrec, Rafael Pinot, Rafael Pires, Rishi Sharma.</em> In the 38th Conference on Neural Information Processing Systems (NeurIPS), 2024.</li>
-				<li> <strong> Fine-Tuning Personalization in Federated Learning to Mitigate Adversarial Clients. </strong> <em>Youssef Allouah, Abdellah El Mrini, Rachid Guerraoui, Nirupam Gupta and Rafael Pinot.</em> In the 38th Conference on Neural Information Processing Systems (NeurIPS), 2024.</li>
-				<li> <strong> Tackling Byzantine Clients in Federated Learning. </strong> <em>Youssef Allouah, Sadegh Farhadkhani, Rachid Guerraoui, Nirupam Gupta, Rafael Pinot, Geovani Rizk, and Sasha Voitovych.</em> In the Proceedings of the 41st International Conference on Machine Learning (ICML), 2024.</li>
-				<li> <strong> Robust Distributed Learning: Tight Error Bounds and Breakdown Point under Data Heterogeneity. </strong> <em>Youssef Allouah, Rachid Guerraoui, Nirupam Gupta, Rafael Pinot, and Geovani Rizk.</em> In the 37th Conference on Neural Information Processing Systems (NeurIPS), 2023 [<em>Spotlight, acceptance rate of 5%</em>].</li>
-				<li> <strong> On the Privacy-Robustness-Utility Trilemma in Distributed Learning. </strong> <em>Youssef Allouah, Rachid Guerraoui, Nirupam Gupta, Rafael Pinot, and John Stephan.</em> In the Proceedings of the 40th International Conference on Machine Learning (ICML), 2023.</li>
-				<li> <strong> Robust Collaborative Learning with Linear Gradient Overhead. </strong> <em>Sadegh Farhadkhani, Rachid Guerraoui, Nirupam Gupta, Lê-Nguyên Hoang, Rafael Pinot, and John Stephan.</em> In the Proceedings of the 40th International Conference on Machine Learning (ICML), 2023.</li>
-				<li> <strong>Fixing by Mixing: A Recipe for Optimal Byzantine ML under Heterogeneity.</strong> <em>Youssef Allouah, Sadegh Farhadkhani, Rachid Guerraoui, Nirupam Gupta, Rafael Pinot, and John Stephan.</em> In the Proceedings of the 26th International Conference on Artificial Intelligence and Statistics (AISTATS), 2023.</li>
-				<li> <strong>Byzantine Machine Learning Made Easy by Resilient Averaging of Momentums.</strong> <em>Sadegh Farhadkhani, Rachid Guerraoui, Nirupam Gupta, Rafael Pinot, and John Stephan.</em> In the Proceedings of the 39th International Conference on Machine Learning (ICML), 2022.</li>
-				<!-- <li> <strong>Differential Privacy and Byzantine Resilience in SGD: Do They Add Up?</strong> <em>Rachid Guerraoui, Nirupam Gupta, Rafaël Pinot, Sébastien Rouault, and John Stephan.</em> The ACM Symposium on Principles of Distributed Computing (PODC), 2021.</li>
-				<li> <strong>Approximate Byzantine Fault-Tolerance in Distributed Optimization.</strong> <em>Shuo Liu, Nirupam Gupta, and Nitin H. Vaidya.</em> The ACM Symposium on Principles of Distributed Computing (PODC), 2021.</li> -->
-			</ol>
-		</div>
-
-		<footer>
-				<hr>
-				<p style="font-size:80%; text-align:center;">
-					&copy; 2026 Nirupam Gupta. All rights reserved.
-				</p>
-			</footer>
-	</body>
-
-
+</body>
 </html>
