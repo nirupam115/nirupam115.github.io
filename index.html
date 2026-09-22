@@ -377,45 +377,76 @@
       <h2>Ongoing Projects</h2>
 
       <p>
-        Below are the main research directions I am currently working on. I am always happy to
-        hear from motivated students and researchers interested in any of these threads — feel
-        free to reach out at <strong>nigu[at]di.ku.dk</strong>.
+        My group builds <strong>rigorous theory and principled algorithms</strong> for trustworthy
+        machine learning; proofs first, then the algorithms and open-source tools those proofs
+        justify. Two programmes anchor the work. I am actively looking for
+        <strong>PhD students and postdocs</strong> who are excited by provable guarantees and clean
+        algorithm design; if either thread speaks to you, write to me at
+        <strong>nigu[at]di.ku.dk</strong>.
       </p>
 
-      <ol>
-        <li>
-          <strong>Trustworthy Federated Learning under Realistic Threats.</strong>
-          Federated learning lets multiple parties train a shared model without exchanging raw
-          data, but real-world deployments face partial trust, communication constraints,
-          heterogeneous data, and corruptions of many kinds — from inadvertent issues like
-          missing modalities or broken sensors, to deliberate ones like mislabelled training
-          data, erroneous gradient updates, or malicious clients. The rigorous tools that exist
-          for these problems — differential privacy and Byzantine resilience — calibrate their
-          protections to a worst-case, all-knowing adversary, which forces so much protective
-          noise into training that accuracy collapses. This project develops a unified framework
-          — <em>expected adversarial sensitivity (EAS)</em> — that calibrates privacy and
-          robustness to realistic, auditable threat models instead, with reconstruction-risk
-          certificates, robust aggregation tailored to bounded adversaries, and audit tools any
-          practitioner can use. The aim is to make rigorous safeguards a practical default in
-          deployed ML rather than a guarantee that exists only on paper. Background reading: my
-          book on
-          <a href="https://link.springer.com/book/10.1007/978-981-97-0688-4" target="_blank">Robust
-          Machine Learning</a> and my chapter in
-          <a href="https://library.oapen.org/handle/20.500.12657/90897" target="_blank">Large
-          Language Models in Cybersecurity</a> on the difficulty of provable robustness and
-          privacy for LLMs.
-          <em>Current collaborators:</em> EPFL, INRIA, Sorbonne University.
-        </li>
+      <div class="project">
+        <h3>ATLAS
+          <span class="project-acr">Adversary-Tailored Learning Scheme</span>
+        </h3>
+        <p class="tagline">
+          Making privacy and robustness affordable by calibrating them to realistic adversaries
+          rather than worst-case ones.
+        </p>
+        <p>
+          Differential privacy and Byzantine resilience are the gold-standard guarantees for
+          private, robust learning, yet both are calibrated to an omniscient, all-powerful
+          adversary, and the protective noise this demands often collapses accuracy. ATLAS starts
+          from one observation: privacy and robustness are the <em>same</em> sensitivity problem
+          seen through two adversary lenses. We replace worst-case sensitivity with
+          <em>expected adversarial sensitivity (EAS)</em>, the sensitivity to a realistic,
+          resource-bounded adversary, and cast the defender's task as an <em>online-learning</em>
+          problem, so smart defences adapt to the adversary's observed behaviour. This yields
+          auditable certificates and training algorithms that recover most of the accuracy today's
+          tools give away.
+        </p>
+        <p class="works-on">
+          <span class="works-label">You might work on:</span> generalisation bounds under
+          differential privacy, online and adaptive defences against bounded adversaries,
+          reconstruction-risk certification, or the open-source EAS toolkit.
+        </p>
+      </div>
 
-        <li>
-          <strong>Robustness in Decentralised Learning over Sparse Communication Graphs.</strong>
-          Peer-to-peer learning when no central server exists and the communication graph is
-          sparse: how to guarantee reliable model updates in the presence of misbehaving nodes,
-          and how to trade off communication efficiency against robustness. Applications include
-          distributed sensor networks, edge computing and drone networks where existing
-          centralised assumptions break down.
-        </li>
-      </ol>
+      <div class="project">
+        <h3>AGORA
+          <span class="project-acr">Across-architecture Generalization via Open Representation Alignment</span>
+        </h3>
+        <p class="tagline">
+          Letting independently trained models exchange knowledge across different architectures,
+          with provable guarantees.
+        </p>
+        <p>
+          Federated learning assumes every participant shares one architecture, so it can only
+          average parameters. AGORA drops that assumption: models living in <em>different</em>
+          hypothesis spaces, say a lightweight convolutional net, a large transformer, or a
+          physics-informed model, exchange knowledge through their <em>predictions</em> rather
+          than their weights, via functional-distance alignment with PAC-Bayes guarantees. The aim
+          is open infrastructure for collaborative learning that no single institution owns, a step
+          toward developing large-scale AI models democratically rather than concentrating them in
+          a few hands, with robustness, privacy, unlearning and fairness built in from the start.
+        </p>
+        <p class="works-on">
+          <span class="works-label">You might work on:</span> functional distillation and
+          representation alignment (optimal-transport / Bregman geometry), generalisation theory
+          for cross-architecture merging, or robust and privacy-preserving aggregation protocols.
+        </p>
+      </div>
+
+      <p class="project-note">
+        A few related threads feed into both programmes: robustness in decentralised learning over
+        sparse communication graphs, robust federated inference, and privacy-preserving
+        collaboration for healthcare. Background reading: my book on
+        <a href="https://link.springer.com/book/10.1007/978-981-97-0688-4" target="_blank">Robust
+        Machine Learning</a> and my chapter in
+        <a href="https://library.oapen.org/handle/20.500.12657/90897" target="_blank">Large
+        Language Models in Cybersecurity</a> on the difficulty of provable robustness and privacy
+        for LLMs.
+      </p>
     </div>
 
     <!-- ============ PUBLICATIONS ============ -->
