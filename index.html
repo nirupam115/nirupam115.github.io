@@ -283,6 +283,37 @@
       margin-top: 16px;
     }
 
+    /* ---------- People: students & collaborators ---------- */
+    .people h3 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--accent-dark);
+      margin: 20px 0 8px 0;
+    }
+    .people h3:first-of-type { margin-top: 4px; }
+    .people-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0 0 6px 0;
+    }
+    .people-list li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+      font-size: 0.96rem;
+      padding-left: 14px;
+      border-left: 2px solid var(--accent-soft);
+    }
+    .people-list .aff { color: var(--muted); }
+    .people .names {
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+    .people .role-label {
+      font-weight: 600;
+      color: var(--accent-dark);
+    }
+
     /* ---------- Footer ---------- */
     footer {
       margin-top: 50px;
@@ -368,6 +399,7 @@
           <p class="nav-label">On this page</p>
           <p>
             <a href="#projects">Ongoing Projects</a><br>
+            <a href="#people">Students &amp; Collaborators</a><br>
             <a href="#publications">Publications</a><br>
             <a href="https://link.springer.com/book/10.1007/978-981-97-0688-4" target="_blank">Book</a>
           </p>
@@ -393,7 +425,7 @@
           I work on the foundations of <em>trustworthy machine learning</em>, focusing on
           <em>robustness</em> and <em>privacy</em> in distributed and federated learning. My goal
           is to make rigorous protection of patients, users and models a practical default in real
-          AI deployments, rather than a guarantee that exists only on paper. A pedagogical
+          AI deployments — rather than a guarantee that exists only on paper. A pedagogical
           introduction to the robustness side of this work is in my book
           <a href="https://link.springer.com/book/10.1007/978-981-97-0688-4" target="_blank">Robust
           Machine Learning: Distributed Methods for Safe AI</a> (Springer, 2024). Active projects
@@ -495,6 +527,70 @@
         <a href="https://library.oapen.org/handle/20.500.12657/90897" target="_blank">Large
         Language Models in Cybersecurity</a> on the difficulty of provable robustness and privacy
         for LLMs.
+      </p>
+    </div>
+
+    <!-- ============ PEOPLE ============ -->
+    <div class="section people" id="people">
+      <h2>Students &amp; Collaborators</h2>
+
+      <p>
+        I have been fortunate to work with excellent students and collaborators across several
+        institutions. If you are a student or researcher who would like to work together, please
+        get in touch at <strong>nigu[at]di.ku.dk</strong>.
+      </p>
+
+      <h3>PhD students</h3>
+      <p style="margin:0 0 6px 0;"><span class="role-label">Currently co-supervising.</span></p>
+      <ul class="people-list">
+        <li>
+          <strong>Mingzhi Wang</strong>,
+          <span class="aff">University of Copenhagen, with Yevgeny Seldin (2025&ndash;present).</span>
+        </li>
+        <li>
+          <strong>Thomas Boudou</strong>,
+          <span class="aff">INRIA and University of Montpellier, with Aur&eacute;lien Bellet and
+          Batiste Le Bars (2024&ndash;present).</span>
+        </li>
+      </ul>
+      <p style="margin:8px 0 6px 0;"><span class="role-label">Previously co-supervised.</span></p>
+      <ul class="people-list">
+        <li>
+          <strong>Youssef Allouah</strong>,
+          <span class="aff">EPFL, with Rachid Guerraoui and Rafael Pinot (2022&ndash;24).</span>
+        </li>
+        <li>
+          <strong>Sadegh Farhadkhani</strong>,
+          <span class="aff">EPFL, with Rachid Guerraoui and Rafael Pinot (2021&ndash;25).</span>
+        </li>
+        <li>
+          <strong>John Stephan</strong>,
+          <span class="aff">EPFL, with Rachid Guerraoui and Rafael Pinot (2021&ndash;25).</span>
+        </li>
+        <li>
+          <strong>Shuo Liu</strong>,
+          <span class="aff">Georgetown University, with Nitin H. Vaidya (2021&ndash;24).</span>
+        </li>
+      </ul>
+      <p class="project-note" style="margin-top:6px;">
+        I also supervise several MSc and BSc students at DIKU and DTU.
+      </p>
+
+      <h3>Collaborators</h3>
+      <p class="names">
+        <span class="role-label">Current collaborators</span> include Rachid Guerraoui (EPFL),
+        Anne-Marie Kermarrec (EPFL), Rafael Pinot (Sorbonne University), Aur&eacute;lien Bellet
+        (INRIA) and Batiste Le Bars (INRIA), together with Leonardo Toso and James Anderson
+        (Columbia University) on recent work.
+      </p>
+      <p class="names">
+        Over the years I have also had the pleasure of working with many others. On trustworthy and
+        distributed machine learning: Geovani Rizk, S&eacute;bastien Rouault, L&ecirc;-Nguy&ecirc;n
+        Hoang, Akash Dhasade, Rafael Pires, Rishi Sharma, Maxime Jacovella, Ahmed Jellouli,
+        Abdellah El Mrini, Sasha Voitovych, Giovanni Neglia, Chuan Xu, Diksha Gupta, Antonio
+        Honsell, Karim Boubouh, Amine Boussetta and Alexandre Maurer. On distributed control and
+        optimisation: Nikhil Chopra, Nitin H. Vaidya, Jonathan Katz, Thinh T. Doan, Kushal
+        Chakrabarti, Shripad Gade and Yimeng Dong.
       </p>
     </div>
 
