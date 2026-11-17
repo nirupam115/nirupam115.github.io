@@ -1,337 +1,126 @@
 <!DOCTYPE HTML>
-
 <html lang="en-US">
-	<head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Nirupam Gupta">
+  <meta name="description" content="Ongoing research projects of Nirupam Gupta (DIKU, University of Copenhagen): ATLAS and AGORA.">
 
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name = "author" content = "Nirupam Gupta" /> 
-		<meta name = "keywords" content = "nirupam gupta" /> 
-		<meta name = "introduction" content = "Personal webpage, Nirupam Gupta" /> 
+  <title>Ongoing Projects — Nirupam Gupta</title>
 
-		<title>Ongoing Projects </title>
-		<style>
-			* {
-			  box-sizing:border-box;
-			}
-			.top{
-				display: table;
-  				width: 80%;
-				margin: auto;
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script>
+    // Apply a saved light/dark choice before the page paints (avoids a flash).
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-			  	font-size: 1.2em;
-			  	/*font-family: "Times New Roman", Times, serif;*/
-			  	letter-spacing: 0.03em;	
-			  	/*margin: 50px;*/
-			  	padding-top: 60px;
-			  	padding-left: 60px;
-			  	padding-right: 60px;
-			  	padding-bottom: 60px;
-			}
+<body>
 
-			.middle{
-				width: 100%;
-				height: auto;
+  <button class="theme-toggle" type="button" aria-label="Switch colour theme">
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
 
-			  	font-size: 1em;
-			  	/*font-family: "Times New Roman", Times, serif;*/
-			  	font color = black
-			  	letter-spacing: 0.03em;
-			  	text-align: start;
+  <div class="container">
 
-			  	padding: 100px;
-			  	padding-top: 20px;
-			  	padding-bottom: 10px;
-			}
+    <header class="site-header">
+      <a class="site-name" href="index.html"><span class="lang-script">निरुपम गुप्ता</span> / Nirupam Gupta</a>
+      <nav class="site-nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="projects.html" aria-current="page">Ongoing Projects</a>
+        <a href="people.html">Students &amp; Collaborators</a>
+        <a href="publications.html">Publications</a>
+      </nav>
+    </header>
 
-			.split_left{
-				display: table-cell; 
-				vertical-align: top; /*Important for proper alignment*/
-/* 				font-family: Arial, Helvetica, sans-serif; */
-				font-family: "Times New Roman", Times, serif;
-				font-size: 80%;
-				color: #fefefe;
+    <main class="page-body">
+    <div class="section" id="projects">
+      <h2>Ongoing Projects</h2>
 
-/* 				background-color: #ff0000; */ /*EPFL Red */
-				letter-spacing: 0.05em;
-/* 				background-color: #041E42; */ /* Georgetown Blue */ 
-/* 				background-color: #00569D; /*  Sky Blue */ 
-				background-color: #000000; /* Black */
-				padding: 20px;
+      <p>
+        My group builds <strong>rigorous theory and principled algorithms</strong> for trustworthy
+        machine learning; proofs first, then the algorithms and open-source tools those proofs
+        justify. Two programmes anchor the work. I am actively looking for
+        <strong>PhD students and postdocs</strong> who are excited by provable guarantees and clean
+        algorithm design; if either thread speaks to you, write to me at
+        <strong>nigu[at]di.ku.dk</strong>.
+      </p>
 
-				padding-top: 20px;
-				padding-bottom: 20px;
+      <div class="project">
+        <h3>ATLAS
+          <span class="project-acr">Adversary-Tailored Learning Scheme</span>
+        </h3>
+        <p class="tagline">
+          Making privacy and robustness affordable by calibrating them to realistic adversaries
+          rather than worst-case ones.
+        </p>
+        <p>
+          Differential privacy and Byzantine resilience are the gold-standard guarantees for
+          private, robust learning, yet both are calibrated to an omniscient, all-powerful
+          adversary, and the protective noise this demands often collapses accuracy. ATLAS starts
+          from one observation: privacy and robustness are the <em>same</em> sensitivity problem
+          seen through two adversary lenses. We replace worst-case sensitivity with
+          <em>expected adversarial sensitivity (EAS)</em>, the sensitivity to a realistic,
+          resource-bounded adversary, and cast the defender's task as an <em>online-learning</em>
+          problem, so smart defences adapt to the adversary's observed behaviour. This yields
+          auditable certificates and training algorithms that recover most of the accuracy today's
+          tools give away.
+        </p>
+        <p class="works-on">
+          <span class="works-label">You might work on:</span> generalisation bounds under
+          differential privacy, online and adaptive defences against bounded adversaries,
+          reconstruction-risk certification, or the open-source EAS toolkit.
+        </p>
+      </div>
 
-			  	width:18%; /* The width is 20%, by default */
-			  	/*height: auto;*/
-			}
-			.split_right{
-				display: table-cell;
-				vertical-align: top;
-				/*float: right;*/
-				font-family: Arial, Helvetica, sans-serif;
-				background-color: #fefefe;
-				width:80%; /* The width is 20%, by default */
-			  	/*height: auto;*/
-			  	letter-spacing: 0.05em;
+      <div class="project">
+        <h3>AGORA
+          <span class="project-acr">Across-architecture Generalization via Open Representation Alignment</span>
+        </h3>
+        <p class="tagline">
+          Letting independently trained models exchange knowledge across different architectures,
+          with provable guarantees.
+        </p>
+        <p>
+          Federated learning assumes every participant shares one architecture, so it can only
+          average parameters. AGORA drops that assumption: models living in <em>different</em>
+          hypothesis spaces, say a lightweight convolutional net, a large transformer, or a
+          physics-informed model, exchange knowledge through their <em>predictions</em> rather
+          than their weights, via functional-distance alignment with PAC-Bayes guarantees. The aim
+          is open infrastructure for collaborative learning that no single institution owns, a step
+          toward developing large-scale AI models democratically rather than concentrating them in
+          a few hands, with robustness, privacy, unlearning and fairness built in from the start.
+        </p>
+        <p class="works-on">
+          <span class="works-label">You might work on:</span> functional distillation and
+          representation alignment (optimal-transport / Bregman geometry), generalisation theory
+          for cross-architecture merging, or robust and privacy-preserving aggregation protocols.
+        </p>
+      </div>
 
-				padding: 20px;
-			  	padding-bottom: 20px;
+      <p class="project-note">
+        A few related threads feed into both programmes: robustness in decentralised learning over
+        sparse communication graphs, robust federated inference, and privacy-preserving
+        collaboration for healthcare. Background reading: my book on
+        <a href="https://link.springer.com/book/10.1007/978-981-97-0688-4" target="_blank">Robust
+        Machine Learning</a> and my chapter in
+        <a href="https://library.oapen.org/handle/20.500.12657/90897" target="_blank">Large
+        Language Models in Cybersecurity</a> on the difficulty of provable robustness and privacy
+        for LLMs.
+      </p>
+    </div>
+    </main>
 
-			  	color = black;	
-			  	text-align: start;		  	
-			}
+    <footer>
+      &copy; 2026 Nirupam Gupta. All rights reserved.
+    </footer>
 
-			/* Use a media query to add a break point at 600px: */
-			@media screen and (max-width:1200px) {
-				.top{
-					padding: 60px;
-					width: 60%;
-				}
-				.split_left{
-					width:25%;
-					padding: 20px;
-				}	
-				.split_right{
-					width:75%;
-					padding: 100px;
-				}
-				.middle{
-					padding: 40px;
-				}
-			}
+  </div>
 
-			@media screen and (max-width:800px) {
-				.top{
-					padding: 40px;
-					width: 70%;
-				}
-				.split_left{
-					width:25%;
-					font-size: 90%;
-					padding: 20px;
-				}	
-				.split_right{
-					width:75%;
-					font-size: 90%;
-					padding: 60px;
-				}
-				.middle{
-					padding: 20px;
-				}
-			}
-
-			@media screen and (max-width:500px) {
-				.top{
-					padding: 20px;
-					width: 100%;
-				}
-			  .split_left, .split_right {
-			  	display: table;
-			    width:100%; /* The width is 100%, when the viewport is 600px or smaller */
-			    font-size: 70%;
-			    padding: 20px;
-			  }
-			  .middle{
-			  	font-size: 50%;
-			  	padding: 10px;
-			  }
-			 }
-
-/*			body {
-			    background-color: white;
-			}*/
-
-			img{
-				background-color: #006f6f;
-			}
-			h2 {
-				text-align: center;
-			}
-			p {
-			    /*font-family: "sans-serif", Helvetica, sans-serif;*/
-			    	font-size: 100%;
-				text-align: left;
-			    	letter-spacing: 0.035em;
-			    	line-height:150%;
-			    	padding-left: 10px;
-			    	padding-right:10px;
-			    	padding-bottom: 5px;
-			}
-			p.aligncenter {
-				font-family: "Times New Roman", Times, serif;
-    				text-align: center;
-				letter-spacing: 0.035em;
-			    	line-height:150%;
-			    	padding-left: 10px;
-			    	padding-right:10px;
-			    	padding-bottom: 5px;
-				padding-top: 10px;
-			}
-			a {
-				text-decoration: none;
-/* 				font-style: italic; */
-				/*color: #006f6f;*/
-				color: #00A79F;
-			}
-			a:visited {
-  				color: #007480;
-			}
-			a.left {
-				color: #fefefe;
-			}
-			a.left:visited{
-				color: #fefefe;
-			}
-			ol {
-			    /*font-family: "sans-serif";*/
-			    letter-spacing: 0.02em;
-			    font-size: 90%;
-			    line-height:200%
-			}
-			ul{
-				font-size: 100%;
-				letter-spacing: 0.04em;
-				line-height:150%;*/
-				margin-bottom: 10px
-			}
-			div.clearfix {
-    				padding: 5px;
-    				overflow: auto;
-    				font-family: "Times New Roman", Times, serif;
-			    	font-size: 20px;
-			}
-/*			img {
-			    float: left;
-			    margin: 25px 50px 10px 10px;
-			}*/
-		</style>
-	</head>
-
-	<body>
-	    <!-- Profile picture and contact info -->
-	<div class = "top">
-		<div class = "split_left">
-				<img src="https://nirupam115.github.io/mandu.jpg" style="width:100%" alt="Nirupam Gupta">
-
-				<hr>
-			<p>
-                Nirupam Gupta </br>
-                
-<!-- 				{1st-name}.gupta@epfl.ch </br> -->
-			
-				<a class = "left" href = "https://nirupam115.github.io/full_CV.pdf" target = "_blank">C.V.</a> </br>
-
-				<a class = "left" href = "https://scholar.google.com/citations?user=WmMys-YAAAAJ" target = "_blank">Google Scholar</a> </br>
-
-				<a class = "left" href = "https://www.linkedin.com/in/niru-gupta/" target = "_blank">LinkedIn</a> 
-			</p>
-			
-			<p>
-				People </br>
-
-				Open Projects </br>
-			
-				<a class = "left" href = "https://dblp.org/pid/192/3250.html" target = "_blank">Publications</a> </br>
-
-				<a class = "left" href = "https://link.springer.com/book/10.1007/978-981-97-0688-4" target = "_blank">Book</a>
-
-			</p>
-				<!-- <hr>
-				<p style="color:#d1d1d1"> My favourite - 
-					<ul style="color:#d1d1d1">
-						<li>Music, </li>
-
-						<li>Movies, </li>
-
-						<li>Books, and </li>
-
-						<li>Places. </li>				
-					</ul>
-				</p> -->
-
-				<!-- <hr>
-				<p>Also, check out these links - </br> 
-				</p>
-				<a href = "https://www.washingtonpost.com/graphics/2020/world/corona-simulator/?itid=sf_coronavirus" target = "_blank">Modelling a pandemic</a> </p>
-				<a href = "https://randomstreetview.com" target = "_blank">Random street view</a> </p>
-				<a href = "https://www.pratilipi.com" target = "_blank">Pratilipi</a> </p> -->
-				
-<!-- 				<hr> -->
-			<!--</p>
-				"... either a worldly success, or a beloved failure." </p>
-				- James Hilton -->
-
-<!-- 			</p>
-				"Haste makes no speed." </br>
-				- <i>H. Hesse</i> -->
-
-		</div>
-		
-        <!-- Introduction -->
-		<div class = "split_right">
-			<!-- <hr> -->
-			<h2>निरुपम गुप्ता / Nirupam Gupta</h2>
-			<p>
-				I am an (TT) Assistant Professor in the <a href = "https://di.ku.dk/english/research/machine-learning/" target = "_blank">ML Section</a> 
-				of the Department of Computer Science at University of Copenhagen (DIKU).  
-<!-- 				In the past, I have worked as a postdoc 
-				in the School of Computer Science at the EPFL (Switzerland), with <a href = "http://lpdwww.epfl.ch/rachid/index.html" target = "_blank">Prof. Rachid Guerraoui</a>  
-				and have also had the pleasure of working as postdoc with 
-				<a href = "https://disc.georgetown.domains" target = "_blank">Prof. Nitin Vaidya</a>. I received my PhD from University of Maryland College Park (USA), 
-				under the supervision of <a href = "https://terpconnect.umd.edu/~nchopra/Home.html" target = "_blank">Prof. Nikhil Chopra</a>.  -->
-				My contact information can be found on <a href = "https://nirupam115.github.io/full_CV.pdf" target = "_blank">my CV</a>. 
-			</p>
-			<p>
-				<b>Research.</b> I work primarily on distributed machine learning (a.k.a. federated learning) algorithms, focusing on the challenges of 
-				<i>robustness</i>, <i>privacy</i> and <i>fairness</i>. Updated list of my publications can be found on my 
-				<a href = "https://dblp.org/pid/192/3250.html" target = "_blank">DBLP page</a>. 
-				To learn about the basics of robustness in the context of distributed learning, check out my latest book 
-				<a href = "https://link.springer.com/book/10.1007/978-981-97-0688-4" target = "_blank">Robust Machine Learning: Distributed Methods for Safe AI</a>. 
-			</p>
-			<p>
-				<b>Teaching.</b> I am teaching <a href = "https://sites.google.com/diku.edu/machine-learning-courses/primal" target = "_blank">Privacy in Machine Learning (PriMaL)</a> 
-				and <a href = "https://sites.google.com/diku.edu/machine-learning-courses/mlb" target = "_blank">Machine Learning B (MLB)</a> at DIKU, in the academic year 2024-2025. 
-				Both these courses are offered in a hybrid format, and support fully remote participation. 
-				For more details, check out this <a href = "https://sites.google.com/diku.edu/machine-learning-courses" target = "_blank">website for ML courses at DIKU</a>.
-			</p>
-<!-- 			<p>
-				<b style="color:blue;">Open Positions!!</b> I am looking for PhD students and Postdocs who would be interested in working on issues of robustness, privacy and fairness in modern machine learning algorithms. 
-				To know more on these topics and their critical role in developing <b> safe and responsible AI </b> technologies, take a look at <a href = "https://link.springer.com/book/10.1007/978-981-97-0688-4" target = "_blank"> my aforementioned book </a> 
-				and <a href = "https://link.springer.com/book/10.1007/978-3-031-54827-7" target = "_blank">this guide on LLMs in Cybersecurity</a>. </br>
-				If you are interested in any of these positions, please write me an email and take a look at these DDSA (Danish Data Science Academy) opportunities for <a href = "https://ddsa.dk/phdfellowshipcall2025/" target = "_blank"> PhD Fellowship </a> 
-				and <a href = "https://ddsa.dk/postdocfellowshipcall2025/" target = "_blank"> Postdoc Fellowship </a>. <b> Deadline for both calls: March 5, 2025 </b>.
-			</p> -->
-			
-<!-- 			<p class = "aligncenter">
-				"Not in their speech, not in their thoughts, I see their greatness, only in their actions, in their life." </br>
-				<b> - Hermann Hesse (Siddhartha) </b>
-			</p> -->
-			<p class = "aligncenter">
-				"Nothing is harder, yet nothing is more necessary, than to speak of certain things whose existence is neither demonstrable nor probable. ..." </br>
-				<b> - Hermann Hesse (The Glass Bead Game) </b>
-			</p>
-			<p>
-				This page was last updated on Feb. 12, 2025. 
-			</p>
-
-<!--             <p> <b>Research Work:</b> Broadly, I am interested in design and analysis of algorithms for distributed optimization and machine learning. 
-				My recent research work focuses on Byzantine fault-tolerance (or robustness to adversarial nodes) in distributed (including decentralized) machine learning. 
-				Some of the challenges in this topic that I am currently pursuing are data heterogeneity, (differential) privacy constraints, and sparse communication topology. </br>
-
-				In the past, I have also worked on pre-conditioning of the gradient-descent method, applied to the distributed optimization framework. 
-				During my PhD, my work primarily focused on the issues of robustness (to adversarial actors) and privacy in distributed optimization and average consensus. </br>
-				
-				For an updated list of my publications, please visit <a href = "https://dblp.org/pid/192/3250.html" target = "_blank">my DBLP profile</a>.
-			</p>	
-
-            <p> <b>Teaching:</b> I have given guest lectures on the topic of byzantine robustness in distributed machine learning in the distributed algorithms
-				course, taught by Prof. Rachid Guerraoui at EPFL. During my postdoc at Georgetown University, I offered a seminar course on the topic of distributed machine learning</i>.
-			</p> -->
-		</div>
-
-	</div>
-	</body>
-
-
+  <script src="theme.js"></script>
+</body>
 </html>
