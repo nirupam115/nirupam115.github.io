@@ -661,3 +661,34 @@ body { position: relative; }
   body::after  { right: 0; transform: scaleX(-1); }  /* mirrored on the right */
 }
 @media print { body::before, body::after { display: none; } }
+
+/* ---------- Book cover thumbnail (homepage, Research paragraph) ---------- */
+/* the paragraph contains the floated cover, so the next paragraph never wraps around it */
+.with-book { display: flow-root; }
+.book-cover {
+  float: left;
+  width: 104px;
+  margin: 5px 20px 10px 0;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px var(--shadow), 0 0 0 1px var(--rule);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.book-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+.book-cover:hover {
+  transform: translateY(-2px) rotate(1deg);
+  box-shadow: 0 6px 16px var(--shadow), 0 0 0 1px var(--accent);
+}
+@media (max-width: 480px) {
+  .book-cover { width: 84px; margin-right: 14px; }
+}
+
+/* On screens without side margins, let the theme button scroll away with the page
+   instead of floating over the text. */
+@media (max-width: 1240px) {
+  .theme-toggle { position: absolute; }
+}
